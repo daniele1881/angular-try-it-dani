@@ -1,4 +1,5 @@
 
-<p *ngIf="product.price > 700">
-  <button (click)="notify.emit()">Notify Me</button>
+<p *ngIf="inputProduct.price > 700">
+  <!-- al click emette un evento "outputEventEmitter". Qualche elemento in qualche componente sarà configurato per gestire questo evento -->
+  <button (click)="outputEventEmitter.emit()">Notify Me</button>
 </p>

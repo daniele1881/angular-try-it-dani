@@ -1,5 +1,6 @@
 <h2>Products</h2>
 
+<!-- ciclo sui prodotti, definiti nel campo "products" della classe product-list.component.ts -->
 <div *ngFor="let product of products">
 	<h3>
 		<a [title]="product.name + ' details'">
@@ -15,8 +16,10 @@
     Share
   </button>
 
-	<app-product-alerts [product]="product" (notify)="onNotify()">
+  <!-- passo il campo "product" come campo in input alla classe product-alerts.component.ts --> 
+	<app-product-alerts [inputProduct]="product" (outputEventEmitter)="onNotify()">
 	</app-product-alerts>
+
 </div>
 
 <!-- 

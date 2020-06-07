@@ -8,6 +8,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 
+//AppModule è la 1° cosa che viene caricata!
 @NgModule({
   imports: [
     BrowserModule,
@@ -16,13 +17,14 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
       { path: '', component: ProductListComponent },
     ])
   ],
+  //lista di tutti i component di questo module!
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
     ProductAlertsComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ] //bootstrap si imposta sono nel root-module (questo), e viene impostato con il root-component (AppComponent)
 })
 export class AppModule { }
 

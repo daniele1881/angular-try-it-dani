@@ -8,8 +8,10 @@ import { Output, EventEmitter } from '@angular/core';
   styleUrls: ["./product-alerts.component.css"]
 })
 export class ProductAlertsComponent implements OnInit {
-  @Input() product;
-  @Output() notify = new EventEmitter();
+  @Input() 
+  inputProduct; //campo ricevuto in input
+  @Output() 
+  outputEventEmitter = new EventEmitter(); //campo che invia un evento in output
   
   constructor() {}
 

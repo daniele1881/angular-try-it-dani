@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 
-import { products } from '../products';
+import { productsConst } from '../productsConst'; //NB: l'estensione del file (.ts) non si deve scrivere
 
+//component per la lista dei prodotti
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  products = products;
+  products = productsConst; //campo con i prodotti
 
   share() {
     window.alert('The product has been shared!');

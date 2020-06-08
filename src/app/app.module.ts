@@ -7,14 +7,21 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartService } from './cart.service';
+import { CartComponent } from './cart/cart.component';
+
 
 //AppModule è la 1° cosa che viene caricata!
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    //qui è dove viene impostato il routing degli URL dell'app
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
+      { path: 'cart', component: CartComponent },
     ])
   ],
   //lista di tutti i component di questo module!
@@ -22,9 +29,12 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    ProductAlertsComponent
+    ProductAlertsComponent,
+    ProductDetailsComponent,
+    CartComponent
   ],
-  bootstrap: [ AppComponent ] //bootstrap si imposta sono nel root-module (questo), e viene impostato con il root-component (AppComponent)
+  bootstrap: [ AppComponent ],
+  providers: [CartService] //bootstrap si imposta sono nel root-module (questo), e viene impostato con il root-component (AppComponent)
 })
 export class AppModule { }
 

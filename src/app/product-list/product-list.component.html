@@ -1,11 +1,11 @@
 <h2>Products</h2>
 
 <!-- ciclo sui prodotti, definiti nel campo "products" della classe product-list.component.ts -->
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId"> <!-- index as productId vuol dire che l'indice del for (0,1,2...) lo mettein un variabile "productId" -->
 	<h3>
-		<a [title]="product.name + ' details'">
-			{{ product.name }}
-		</a>
+		<a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      {{ product.name }}
+    </a>
 	</h3>
 
 	<p *ngIf="product.description">

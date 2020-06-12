@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -16,6 +17,7 @@ import { CartComponent } from './cart/cart.component';
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     //qui è dove viene impostato il routing degli URL dell'app
     RouterModule.forRoot([
@@ -33,8 +35,8 @@ import { CartComponent } from './cart/cart.component';
     ProductDetailsComponent,
     CartComponent
   ],
-  bootstrap: [ AppComponent ],
-  providers: [CartService] //bootstrap si imposta sono nel root-module (questo), e viene impostato con il root-component (AppComponent)
+  bootstrap: [ AppComponent ], //bootstrap si imposta sono nel root-module (questo), e viene impostato con il root-component (AppComponent)
+  providers: [CartService]
 })
 export class AppModule { }
 
